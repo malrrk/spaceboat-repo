@@ -72,17 +72,17 @@ def train_ai(minor_ai, genome1, config):
             if event.type == pygame.QUIT:
                 quit()
 
-        if :
-            calculate_fitness(genome1, game_ai)
+        if minor_ai.calculations_gravity_collisions() == False:
+            calculate_fitness(genome1, minor_ai)
             break
 
-        move_spaceship_network(game_ai, trainee)
+        move_spaceship_network(minor_ai, trainee)
 
         if display_game:
             minor_ai.draw()
             pygame.display.flip()
 
-def play_ai(genome, move, config):
+def play_ai(genome, game, config):
     ai = neat.nn.FeedForwardNetwork.create(genome, config)
 
     run = True
@@ -93,7 +93,7 @@ def play_ai(genome, move, config):
             if event == pygame.QUIT:
                 quit()
 
-        if :
+        if game.calculations_gravity_collisions() == False:
             run = False
             break
         move_spaceship_network(game, ai)
